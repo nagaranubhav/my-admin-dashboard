@@ -2,33 +2,43 @@ import "./Widigets.scss"
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 const Widigets = ({type}) => {
-    let data;
+    let data
+    const amount=100
+    const diff=20
    switch(type){
     case "user":
         data={
         title:"user",
         isMoney:false,
-        link:"See all users"
+        link:"See all users",
         icon:<PersonOutlineOutlinedIcon className="icon"/>
         
     };
     break;
 
-    case "user":
+    case "order":
         data={
-        title:"user",
+        title:"ORDERS",
         isMoney:false,
-        link:"See all users"
+        link:"See all order",
         icon:<PersonOutlineOutlinedIcon className="icon"/>
         
     };
     break;
 
-    case "user":
+    case "earning":
         data={
-        title:"user",
-        isMoney:false,
-        link:"See all users"
+        title:"EARNINGS",
+        isMoney:true,
+        link:"view net earning",
+        icon:<PersonOutlineOutlinedIcon className="icon"/>
+        
+    };
+    case "balance":
+        data={
+        title:"BALANCE",
+        isMoney:true,
+        link:"See details",
         icon:<PersonOutlineOutlinedIcon className="icon"/>
         
     };
@@ -40,16 +50,16 @@ const Widigets = ({type}) => {
     return (
         <div className="widget">
             <div className="left">
-                <span className="title">Users</span>
-                <span className="counter">3432</span>
-                <span className="link">See all users</span>
+                <span className="title">{data.title}</span>
+                <span className="counter">{data.isMoney && "$"} {amount}</span>
+                <span className="link">{data.link}</span>
             </div>
             <div className="right">
                 <div className="percentage positive">
                     <KeyboardArrowUpIcon />
-                    20%
+                    {diff}
                 </div>
-                <PersonOutlineOutlinedIcon className="icon" />
+                {data.icon}
             </div>
         </div>
     )
