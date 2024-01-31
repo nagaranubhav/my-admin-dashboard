@@ -1,3 +1,5 @@
+import Charts from "../../components/charts/Charts"
+import Featured from "../../components/featured/Featured"
 import Navbar from "../../components/navbar/Navbar"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Widigets from "../../components/widigets/Widigets"
@@ -15,6 +17,11 @@ const home = () => {
           <Widigets type="earning"/>
           <Widigets type="balance"/>
         </div>
+        <div className="charts">
+           <Featured/>
+           <Charts/>
+        </div>
+        <div className="listcontainer"></div>
       </div>
     </div>
   )

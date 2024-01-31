@@ -34,6 +34,7 @@ const Widigets = ({type}) => {
         icon:<PersonOutlineOutlinedIcon className="icon"/>
         
     };
+    break;
     case "balance":
         data={
         title:"BALANCE",
